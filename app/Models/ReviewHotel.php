@@ -5,9 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ReviewHotel extends Model
+class Reviewhotel extends Model
 {
-    use HasFactory;
     use HasFactory;
     protected $fillable = [
         'user_id',
@@ -25,6 +24,6 @@ class ReviewHotel extends Model
 
     public function restaurantname()
     {
-        return $this->belongsTo(Restaurant::class,'hotel_id');
+        return $this->belongsTo(Hotel::class,'hotel_id');
     } 
 }

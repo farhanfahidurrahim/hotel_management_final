@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Review;
-use App\Models\ReviewHotel;
+use App\Models\Reviewhotel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -28,11 +28,11 @@ class ReviewController extends Controller
 
     public function hotelStore(Request $request)
     {
-        $rv=ReviewHotel::create([
+        $rv=Reviewhotel::create([
             'user_id'=>$request->userid,
             'user_name'=>$request->username,
-            'hotel_id'=>$request->restid,
-            'hotel_name'=>$request->restname,
+            'hotel_id'=>$request->hotelid,
+            'hotel_name'=>$request->hotelname,
             'star'=>$request->star,
             'feedback'=>$request->feedback,
         ]);

@@ -41,6 +41,11 @@ class User extends Authenticatable
         $permission = $this->permissions()->where('permission_name', $permissionName)->first();
         return $permission ? $permission->value : false;
     }
+
+    public function discountClaimed()
+    {
+        return $this->hasMany(Claimeddiscount::class,'user_id');
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

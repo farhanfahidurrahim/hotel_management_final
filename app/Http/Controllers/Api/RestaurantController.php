@@ -25,6 +25,7 @@ class RestaurantController extends Controller
     public function viewRestaurant($id)
     {
         $data=Restaurant::where('id',$id)->where('status','=',1)->with('restaurantrating','restaurantreview')->first();
+        return $data;
         if ($data) {
             return response()->json([
                 'View Restaurant'=>$data,
